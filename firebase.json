@@ -1,0 +1,6 @@
+{
+  "firestore": {
+    "rules": "firestore.rules",
+    "database": "ai-studio-promolinkautomat-a1a4329d-3f42-45d3-9c1d-2924488bb12b"
+  }
+}

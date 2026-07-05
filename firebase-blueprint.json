@@ -1,0 +1,73 @@
+{
+  "entities": {
+    "BotSettings": {
+      "title": "BotSettings",
+      "description": "Configuration settings for Telegram, WhatsApp, and affiliate IDs.",
+      "type": "object",
+      "properties": {
+        "telegramToken": { "type": "string" },
+        "telegramChatId": { "type": "string" },
+        "whatsappWebhookUrl": { "type": "string" },
+        "whatsappApiKey": { "type": "string" },
+        "whatsappGroupJid": { "type": "string" },
+        "amazonAssociateId": { "type": "string" },
+        "shopeeSubId": { "type": "string" },
+        "generalRedirectPrefix": { "type": "string" },
+        "categories": { "type": "array" }
+      },
+      "required": ["amazonAssociateId", "shopeeSubId", "categories"]
+    },
+    "Offer": {
+      "title": "Offer",
+      "description": "Information about a product promotion deal and its status.",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "originalUrl": { "type": "string" },
+        "affiliateUrl": { "type": "string" },
+        "store": { "type": "string" },
+        "price": { "type": "number" },
+        "originalPrice": { "type": "number" },
+        "discountPercent": { "type": "number" },
+        "category": { "type": "string" },
+        "relevance": { "type": "number" },
+        "status": { "type": "string", "enum": ["draft", "scheduled", "sent", "failed"] },
+        "createdAt": { "type": "string" },
+        "scheduledAt": { "type": "string" },
+        "sentAt": { "type": "string" },
+        "clicksCount": { "type": "number" },
+        "channels": { "type": "array" }
+      },
+      "required": ["title", "originalUrl", "affiliateUrl", "store", "price", "category", "relevance", "status", "createdAt", "clicksCount", "channels"]
+    },
+    "ClickLog": {
+      "title": "ClickLog",
+      "description": "Click event logs when an end user redirects to an affiliate promotion.",
+      "type": "object",
+      "properties": {
+        "offerId": { "type": "string" },
+        "offerTitle": { "type": "string" },
+        "timestamp": { "type": "string" },
+        "userAgent": { "type": "string" },
+        "ip": { "type": "string" },
+        "referrer": { "type": "string" }
+      },
+      "required": ["offerId", "offerTitle", "timestamp"]
+    }
+  },
+  "firestore": {
+    "settings/main": {
+      "schema": "BotSettings",
+      "description": "The main configuration document for API and affiliate IDs."
+    },
+    "offers/{offerId}": {
+      "schema": "Offer",
+      "description": "List of scanned and created offers."
+    },
+    "clicks/{clickId}": {
+      "schema": "ClickLog",
+      "description": "Click telemetry logs."
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "settings": {
+    "telegramToken": "",
+    "telegramChatId": "",
+    "whatsappWebhookUrl": "",
+    "whatsappApiKey": "",
+    "whatsappGroupJid": "",
+    "amazonAssociateId": "seutag-20",
+    "shopeeSubId": "afiliado123",
+    "generalRedirectPrefix": "/r/",
+    "categories": [
+      "Eletrônicos",
+      "Moda",
+      "Casa & Cozinha",
+      "Livros",
+      "Games",
+      "Beleza & Cuidado",
+      "Supermercado",
+      "Outros"
+    ]
+  },
+  "offers": [],
+  "clicks": []
+}

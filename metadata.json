@@ -1,0 +1,6 @@
+{
+  "name": "PromoLink Automation",
+  "description": "Sistema de automação de links de afiliados e envio de ofertas para grupos de Telegram e WhatsApp com inteligência artificial, estatísticas de cliques e notificações push.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
